@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "../src/api/auth";  // path apni structure ke hisaab se adjust karna
+// import { login } from "../src/api/auth";  // Backend abhi nahi hai
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -8,11 +8,16 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({ email, password });
+      // Dummy response (Demo Mode)
+      const res = {
+        token: "demo-token-123",
+        user: { name: "Demo User", email },
+      };
+
       localStorage.setItem("token", res.token);
       alert(`Logged in as ${res.user.name} (Demo Mode)`);
     } catch (err) {
-      alert("Login failed (backend not connected)");
+      alert("Login failed (demo mode)");
       console.error(err);
     }
   };
