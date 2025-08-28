@@ -1,0 +1,68 @@
+/* Animal-Themed Global Styles */
+body, html {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c9e4c5 100%);
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.animal-bg {
+  background: url('https://www.transparenttextures.com/patterns/paw-print.png'), linear-gradient(135deg, #f5f7fa 0%, #c9e4c5 100%);
+  background-size: 120px, cover;
+}
+
+.animal-accent {
+  color: #7c5e3c;
+}
+
+.animal-btn {
+  background: #f7c873;
+  color: #7c5e3c;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.animal-btn:hover {
+  background: #ffe5b4;
+}
+
+.paw-divider {
+  width: 100%;
+  height: 32px;
+  background: url('https://www.transparenttextures.com/patterns/paw-print.png') repeat-x;
+  opacity: 0.15;
+}
+
+/* Remove default React styles */
+.App-logo, .App-header, .App-link {
+  all: unset;
+}
+
+/* Theme Overrides for Tailwind-like utility classes to match PetConnect theme */
+/* Primary buttons previously using blue -> switch to animal theme */
+.bg-blue-500 { background-color: #f7c873 !important; color: #7c5e3c !important; }
+.hover\:bg-blue-600:hover { background-color: #ffe5b4 !important; color: #7c5e3c !important; }
+
+/* Text and borders -> warm yellow/brown palette */
+.text-blue-500 { color: #7c5e3c !important; }
+.text-blue-700 { color: #8a6d3b !important; }
+.text-blue-800 { color: #7c5e3c !important; }
+.border-blue-200 { border-color: #f4d28f !important; }
+.border-blue-300 { border-color: #e9c56a !important; }
+
+/* Inputs focus state */
+.focus\:border-blue-400:focus { border-color: #f2c357 !important; }
+
+/* Gradient card overrides used in various pages */
+.bg-gradient-to-br.from-blue-100.to-green-100 { background-image: linear-gradient(to bottom right, #fff7d6, #c9e4c5) !important; }
+.bg-gradient-to-br.from-blue-50.via-white.to-blue-100 { background-image: linear-gradient(to bottom right, #fff8ec, #ffffff, #ffe9b0) !important; }
+
+/* Emphasize action links */
+.text-blue-500.font-semibold { color: #7c5e3c !important; }
+
+/* Headings tint */
+.h1, h1 { color: #7c5e3c; }
+.h2, h2 { color: #8a6d3b; }
+
+/* Card base (apply alongside existing white/rounded/shadow) */
+.theme-card { background: linear-gradient(180deg, #ffffff, #fff8ec 60%, #fff2d6); border: 1px solid #f4d28f; }

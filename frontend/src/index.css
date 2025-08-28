@@ -1,0 +1,7 @@
+@import './fonts-bubble.css';
+@import './fonts.css';
+@import './fonts-forte.css';
+@import './fonts-luckiestguy.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
