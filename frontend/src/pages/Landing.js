@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  MdOutlineMedicalServices, MdCalendarMonth, MdPets, MdStore, MdCampaign, MdChat, MdCheckCircle, MdDashboard, MdPerson, MdShoppingCart, MdSearch
+  MdOutlineMedicalServices, MdCalendarMonth, MdPets, MdStore, MdCampaign, MdChat, MdCheckCircle, MdStar, MdLocationOn, MdPhone, MdEmail
 } from 'react-icons/md';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
 
 const CheckIcon = () => (
-  <MdCheckCircle className="w-5 h-5 text-green-700" />
+  <MdCheckCircle className="w-5 h-5 text-green-600" />
 );
 
 const Landing = () => {
@@ -26,52 +28,90 @@ const Landing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50 via-white to-white text-yellow-900">
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-gray-50">
       {/* Hero */}
-      <header className="relative overflow-hidden">
-        <div className="absolute -top-16 -right-16 w-64 h-64 bg-yellow-200/60 rounded-full blur-2xl" />
-        <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-amber-100/60 rounded-full blur-2xl" />
+      <header className="relative overflow-hidden bg-gradient-to-br from-orange-50 to-white">
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl" />
         <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-24 md:pb-24">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold shadow-sm">
-                <MdPets className="text-lg text-yellow-700" /> PetConnect
-              </span>
-              <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
-                Your all-in-one platform for pet care and connections
+              <div className="inline-flex items-center gap-3 bg-orange-50 text-orange-900 px-4 py-2 rounded-full border border-orange-200 shadow-sm">
+                <img src="/logo.png" alt="PetConnect" className="w-6 h-6" />
+                <span className="font-bold text-orange-800">PetConnect</span>
+              </div>
+              <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">
+                Your all-in-one platform for 
+                <span className="text-orange-500">pet care</span> and connections
               </h1>
-              <p className="mt-4 text-lg text-yellow-800/90">
-                Discover vets, book appointments, adopt pets, and shop essentials—all in one place.
+              <p className="mt-4 text-lg text-gray-700">
+                Discover trusted vets, book appointments, adopt pets, and shop essentials—all in one place.
               </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Link to="/login" className="animal-btn px-6 py-3 rounded-lg text-yellow-900 font-semibold text-center shadow">
-                  Get Started
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Link to="/login">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Get Started Now
+                  </Button>
                 </Link>
-                <a href="#how" className="px-6 py-3 rounded-lg border border-yellow-300 bg-white text-yellow-900 font-semibold text-center shadow hover:bg-yellow-50">
-                  See how it works
+                <a href="#how">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                    See how it works
+                  </Button>
                 </a>
               </div>
-              <div className="mt-6 flex items-center gap-4 text-sm text-yellow-800/90">
-                <span className="inline-flex items-center gap-2"><CheckIcon /> Trusted vets</span>
-                <span className="inline-flex items-center gap-2"><CheckIcon /> Secure bookings</span>
-                <span className="inline-flex items-center gap-2"><CheckIcon /> Community driven</span>
+              <div className="mt-8 flex items-center gap-6 text-sm text-gray-600">
+                <span className="inline-flex items-center gap-2 font-medium"><CheckIcon /> Verified vets</span>
+                <span className="inline-flex items-center gap-2 font-medium"><CheckIcon /> Secure platform</span>
+                <span className="inline-flex items-center gap-2 font-medium"><CheckIcon /> 24/7 support</span>
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-2xl bg-gradient-to-tr from-yellow-100 to-amber-200 p-1 shadow-xl">
-                <div className="rounded-2xl bg-white p-6 md:p-8">
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div className="p-4 rounded-xl bg-yellow-50 shadow"><MdOutlineMedicalServices className="text-3xl text-yellow-700 mx-auto" /><div className="mt-2 font-semibold">1. Find Vet</div></div>
-                    <div className="p-4 rounded-xl bg-yellow-50 shadow"><MdCalendarMonth className="text-3xl text-yellow-700 mx-auto" /><div className="mt-2 font-semibold">2. Book</div></div>
-                    <div className="p-4 rounded-xl bg-yellow-50 shadow"><MdChat className="text-3xl text-yellow-700 mx-auto" /><div className="mt-2 font-semibold">3. Consult</div></div>
-                    <div className="p-4 rounded-xl bg-yellow-50 shadow"><MdPets className="text-3xl text-yellow-700 mx-auto" /><div className="mt-2 font-semibold">Adopt</div></div>
-                    <div className="p-4 rounded-xl bg-yellow-50 shadow"><MdShoppingCart className="text-3xl text-yellow-700 mx-auto" /><div className="mt-2 font-semibold">Shop</div></div>
-                    <div className="p-4 rounded-xl bg-yellow-50 shadow"><MdChat className="text-3xl text-yellow-700 mx-auto" /><div className="mt-2 font-semibold">Chatbot</div></div>
-                  </div>
+              <div className="rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100 p-8 shadow-2xl border border-orange-200">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <MdOutlineMedicalServices className="text-3xl text-orange-600 mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800">Find Vet</div>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <MdCalendarMonth className="text-3xl text-orange-600 mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800">Book</div>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <MdChat className="text-3xl text-orange-600 mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800">Consult</div>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <MdPets className="text-3xl text-orange-600 mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800">Adopt</div>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <MdStore className="text-3xl text-orange-600 mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800">Shop</div>
+                    </CardContent>
+                  </Card>
+                  <Card className="border-orange-200 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <MdChat className="text-3xl text-orange-600 mx-auto mb-2" />
+                      <div className="font-semibold text-gray-800">Support</div>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-md px-4 py-3 border border-yellow-200 text-sm">
-                ⭐ 4.9 average vet rating
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg px-4 py-3 border border-orange-200 text-sm font-medium">
+                <div className="flex items-center gap-1 text-orange-600">
+                  <MdStar className="text-orange-400" />
+                  <span>4.9</span>
+                  <span className="text-gray-600">average rating</span>
+                </div>
               </div>
             </div>
           </div>
@@ -84,18 +124,24 @@ const Landing = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold">How PetConnect works</h2>
           <p className="mt-3 text-yellow-800/90">We bring everything your pet needs into a single, friendly workflow.</p>
         </div>
-        <div className="mt-10 grid md:grid-cols-4 gap-6">
-          {steps.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-yellow-200 bg-white p-6 shadow-sm">
-              <div className="text-xs font-bold text-yellow-700 bg-yellow-100 inline-block px-2 py-1 rounded-full">{s.badge}</div>
-              <div className="mt-3 text-xl font-bold">{s.title}</div>
-              <div className="mt-2 text-yellow-800/90">{s.desc}</div>
-            </div>
+        <div className="mt-12 grid md:grid-cols-4 gap-6">
+          {steps.map((s, index) => (
+            <Card key={s.title} className="border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 relative">
+              <CardHeader>
+                <div className="absolute -top-3 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                  {s.badge}
+                </div>
+                <CardTitle className="text-gray-900 mt-2">{s.title}</CardTitle>
+                <CardDescription className="text-gray-600">{s.desc}</CardDescription>
+              </CardHeader>
+            </Card>
           ))}
         </div>
-        <div className="mt-8 text-center">
-          <Link to="/register" className="animal-btn px-6 py-3 rounded-lg text-yellow-900 font-semibold inline-block shadow">
-            Create your free account
+        <div className="mt-12 text-center">
+          <Link to="/register">
+            <Button size="lg" className="px-8">
+              Create your free account
+            </Button>
           </Link>
         </div>
       </section>
@@ -107,13 +153,21 @@ const Landing = () => {
             <h2 className="text-3xl md:text-4xl font-extrabold">Everything in one place</h2>
             <p className="mt-3 text-yellow-800/90">From finding vets to shopping for your pet—navigate with ease.</p>
           </div>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
-              <Link to={f.to} key={f.title} className="group rounded-2xl bg-white border border-yellow-200 p-6 shadow-sm hover:shadow-md transition">
-                <div className="text-3xl">{f.icon}</div>
-                <div className="mt-3 text-xl font-bold group-hover:underline">{f.title}</div>
-                <div className="mt-2 text-yellow-800/90">{f.desc}</div>
-                <div className="mt-4 inline-block text-sm font-semibold text-yellow-900 group-hover:translate-x-1 transition">Explore →</div>
+              <Link to={f.to} key={f.title} className="group">
+                <Card className="border-gray-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 h-full">
+                  <CardHeader>
+                    <div className="text-4xl mb-3">{f.icon}</div>
+                    <CardTitle className="text-gray-900 group-hover:text-orange-600 transition-colors">{f.title}</CardTitle>
+                    <CardDescription className="text-gray-600">{f.desc}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="text-sm font-semibold text-orange-600 group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                      Explore <span>→</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </Link>
             ))}
           </div>
@@ -122,27 +176,56 @@ const Landing = () => {
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="rounded-2xl bg-gradient-to-tr from-yellow-100 to-amber-200 p-1 shadow-xl">
-          <div className="rounded-2xl bg-white p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <div className="text-2xl md:text-3xl font-extrabold">Ready to get started?</div>
-              <div className="mt-2 text-yellow-800/90">Join PetConnect today and experience smarter pet care.</div>
+        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200 shadow-2xl">
+          <CardContent className="p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-center md:text-left">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                  Ready to get started?
+                </h3>
+                <p className="text-lg text-gray-700">
+                  Join PetConnect today and experience smarter pet care.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/login">
+                  <Button size="lg" className="w-full sm:w-auto px-8">
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto px-8">
+                    Register
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="flex gap-3">
-              <Link to="/login" className="animal-btn px-6 py-3 rounded-lg text-yellow-900 font-semibold shadow">Login</Link>
-              <Link to="/register" className="px-6 py-3 rounded-lg border border-yellow-300 bg-white text-yellow-900 font-semibold shadow hover:bg-yellow-50">Register</Link>
-            </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-yellow-200/80">
-        <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-yellow-900 font-bold">
-            <MdPets className="text-lg text-yellow-700" /> PetConnect
+      <footer className="border-t border-gray-200 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="PetConnect" className="w-8 h-8" />
+              <span className="text-xl font-bold text-gray-900">PetConnect</span>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-6 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <MdEmail className="text-orange-500" />
+                <span>support@petconnect.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MdPhone className="text-orange-500" />
+                <span>+1 (555) 123-PETS</span>
+              </div>
+            </div>
           </div>
-          <div className="text-sm text-yellow-800/90">© {new Date().getFullYear()} PetConnect. All rights reserved.</div>
+          <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+            © {new Date().getFullYear()} PetConnect. All rights reserved. Made with ❤️ for pet lovers.
+          </div>
         </div>
       </footer>
     </div>
