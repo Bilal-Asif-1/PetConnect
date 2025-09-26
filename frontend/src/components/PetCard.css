@@ -55,30 +55,27 @@
 
 .pet-card .contentBox {
   position: relative;
-  padding: 10px 10px 16px 10px;
+  padding: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 2;
-  min-height: 120px;
 }
 
 .pet-card .contentBox h3 {
-  font-size: 15px;
+  font-size: 18px;
   color: white;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 2px;
 }
 
 .pet-card .contentBox .price {
-  font-size: 18px;
+  font-size: 24px;
   color: white;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 4px;
 }
 
 .pet-card .contentBox .buy {
@@ -96,20 +93,7 @@
   transition: 0.5s;
 }
 
-.pet-card .contentBox .buy {
-  position: relative;
+.pet-card:hover .contentBox .buy {
   top: 0;
   opacity: 1;
-  padding: 8px 20px;
-  margin-top: 8px;
-  color: #000000;
-  text-decoration: none;
-  background: #ffce00;
-  border-radius: 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 13px;
-  font-weight: 600;
-  transition: 0.3s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }

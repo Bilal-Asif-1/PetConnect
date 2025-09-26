@@ -1,3 +1,4 @@
+import Landing from '../pages/ModernLanding';
 
 import VetDashboard from '../pages/VetDashboard';
 import PetList from '../pages/PetList';
@@ -19,7 +20,7 @@ import Dashboard from '../pages/Dashboard';
 import BuyerDashboard from '../pages/BuyerDashboard';
 import SellerDashboard from '../pages/SellerDashboard';
 import SellerProductAdmin from '../pages/SellerProductAdmin';
-import Landing from '../pages/Landing';
+import ModernLanding from '../pages/ModernLanding';
 // ... other imports ...
 import MainLayout from '../components/MainLayout';
 

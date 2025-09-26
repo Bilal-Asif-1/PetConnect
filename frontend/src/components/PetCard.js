@@ -23,6 +23,9 @@ export default function PetCard({ pet }) {
             pet.type === "adoption" ? "Adoption" : "Contact"
           )}
         </h2>
+        <div style={{ color: "#fff", fontSize: 14, margin: "8px 0" }}>
+          {pet.species} • {pet.breed}
+        </div>
         <div style={{ color: "#fff", fontSize: 13, marginBottom: 4 }}>
           Age: {pet.age} | Gender: {pet.gender}
         </div>
@@ -31,7 +34,11 @@ export default function PetCard({ pet }) {
             Vaccinated: {pet.vaccinationStatus}
           </div>
         )}
-       
+        {pet.description && (
+          <div style={{ color: "#fff", fontSize: 13, marginBottom: 4, textAlign: "center" }}>
+            {pet.description}
+          </div>
+        )}
         <a href="#" className="buy">
           {pet.type === "adoption" ? "Adopt Now" : "Contact"}
         </a>
